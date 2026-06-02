@@ -11,8 +11,18 @@
     <body>
         <nav class="navbar">
             <div class="nav-left">
-                <!-- Aquí va el PHP para la bandera -->
-                <img src="img/banderas/mx.png" class="flag-icon">
+                <?php
+                    $imgs = [
+                        "it" => "img/banderas/it.png",
+                        "mx" => "img/banderas/mx.png",
+                        "fr" => "img/banderas/fr.png",
+                        "ar" => "img/banderas/ar.png"
+                    ];
+                    $pais = $_GET["pais"];
+                    //echo $pais;
+                    echo "<img src=". $imgs[$pais] ." class= 'flag-icon'>";
+                ?>               
+                
                 <h1>PizzaPlaneta</h1>
             </div>
             <div class="nav-right">
@@ -113,9 +123,7 @@
                         <textarea name="instrucciones" id="txta-instrucciones" rows="4" placeholder="Casa de color azul, porton negro"></textarea>
                     </div>
                 </div>
-
                 <!-- Aquí va otro php (Oculto, wuuu) -->
-                
                 <button type="submit" class="btn-submit">¡Pedir mi Pizza!</button>
             </form>
         </main>
