@@ -29,7 +29,7 @@
 
         </div>
         <!-- otro atributo? -->
-        <form action="guardar.php" method="POST">
+        <form action="guardar.php" method="POST" enctype="multipart/form-data">
 
             <input type="file" name="foto_perfil" id="ipt-foto_perfil" accept="image/png, image/jpeg">
 

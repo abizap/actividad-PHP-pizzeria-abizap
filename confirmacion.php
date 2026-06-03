@@ -41,7 +41,9 @@
                 $tamanio = $_POST["tamano"];
                 $extras = $_POST["extras"];
                 $instrucciones = $_POST["instrucciones"];
+                $pais = $_POST["pais"];
                 
+                echo "<p>País: $pais</p>";
                 echo "<p>Cliente: $nombre </p>";
                 echo "<p>Correo: $correo</p>";
                 echo "<p>Cantidad: $cantidad_pizzas</p>";
@@ -51,6 +53,13 @@
                 echo "<p>Color de caja: $color</p>";
                 echo "<p>Tamaño: $tamanio</p>";
                 echo "<p>Instrucciones: $instrucciones</p>";
+                //var_dump($extras);
+                echo "<p>Extras:</p>";
+                echo "<ul>";
+                foreach($extras as $extra){
+                    echo "<li>". $extra ."</li>";
+                }
+                echo "</ul>";
             ?>
             
         </div>

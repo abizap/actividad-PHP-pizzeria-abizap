@@ -1,5 +1,11 @@
 <?php
-    
+    if(isset($_FILES['foto_perfil'])){
+        //var_dump($_FILES['foto_perfil']);    
+        $archivo = $_FILES['foto_perfil'];
+        $nombre_archivo = $archivo['name'];
+        $ruta_temporal = $archivo['tmp_name'];
+        move_uploaded_file($ruta_temporal, 'img/perfil_usuario.jpg');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +25,16 @@
         <div class="nav-right">
             <div class="profile-section">
                 <!-- Aquí va el PHP para la imagen de perfil -->
-                <img src="img/perfil_default.jpg" class="profile-pic">
+                <?php
+                $ruta_imagen = "";
+                    if(file_exists("img/perfil_usuario.jpg")){
+                        $ruta_imagen = "img/perfil_usuario.jpg";
+                    }
+                    else{
+                        $ruta_imagen = "img/perfil_default.jpg";
+                    }
+                        echo "<image src='$ruta_imagen' class= 'profile-pic'>";
+                ?>
 
                 <a href="perfil.php" class="btn-editar">EditarPerfil</a>
             </div>
@@ -32,7 +47,6 @@
             </h2>
         </header>
         <div class="contenedor-foto-perfil">
-
 
         <!-- Aquí va el PHP para mostrar la foto de perfil actual en grande-->
 
